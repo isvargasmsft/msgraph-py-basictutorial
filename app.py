@@ -18,7 +18,7 @@ client = GraphServiceClient(credential, scopes)
 async def get_user_messages():
      """Getting the messages of a user"""
      try:
-         messages = await client.users_by_id("AlexW@M365x86781558.OnMicrosoft.com").messages.get()
+         messages = await client.users.by_user_id("AlexW@M365x86781558.OnMicrosoft.com").messages.get()
          for msg in messages.value:
              print(
                  msg.subject,
