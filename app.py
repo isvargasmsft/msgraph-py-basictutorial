@@ -3,7 +3,7 @@
 import asyncio
 
 from azure.identity.aio import ClientSecretCredential
-from kiota_abstractions.api_error import api_error
+from kiota_abstractions.api_error import APIError
 
 from msgraph import GraphServiceClient
 
