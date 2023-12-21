@@ -14,15 +14,15 @@ scopes = ['https://graph.microsoft.com/.default']
 
 client = GraphServiceClient(credential, scopes)
 
-async def get_user_chats():
+async def get_user_messages():
     try:
-        messages = await client.users.by_user_id("AlexW@M365x86781558.OnMicrosoft.com").chats.get()
+        messages = await client.users.by_user_id("AlexW@M365x86781558.OnMicrosoft.com").messages.get()
 
         for msg in messages.value:
             print(
-                msg.topic
+                msg.subject
             )
     except Exception as e_rr:
         print(f'Error: {e_rr.error.message}')
         
-asyncio.run(get_user_chats())
+asyncio.run(get_user_messages())
